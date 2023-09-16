@@ -16,5 +16,5 @@ Commands:<br>
 Features:<br>
 ✅ Creating a room<br>
 ✅ Creating a room with preloaded video - passing url in `create` command<br>
-🔳 Sharing an item - changing currently playing video<br>
+✅ Sharing an item - changing currently playing video<br>
 🔳 Adding items to currently playing playlist<br>
