@@ -18,8 +18,8 @@ const val w2gUrlCreateUrl = "create.json"
 const val w2gRoomUrl = "https://w2g.tv/rooms/"
 const val w2gRoomUpdateVideoEndpoint = "sync_update"
 
-var w2gApiKey: String = System.getenv("w2g-api-key")
-val botToken: String = System.getenv("bot-token")
+var w2gApiKey: String = System.getenv("w2gapikey")
+val botToken: String = System.getenv("bottoken")
 
 val rooms = mutableListOf<String>()
 
@@ -119,8 +119,8 @@ suspend fun main() {
                   "Id of a room to update",
                   optional = true,
               )
-          val roomIndex: Int? by
-              intParameter(
+          val roomIndex: Float? by
+              floatParameter(
                   "room_index",
                   "Index of a room to update",
                   optional = true,
@@ -129,7 +129,7 @@ suspend fun main() {
             if (rooms.isEmpty()) {
               respond { content = "No active rooms! 🤔 😔" }
             } else if (videoUrl != null && (roomId != null || roomIndex != null)) {
-              val id = roomId ?: rooms[roomIndex!!]
+              val id = roomId ?: rooms[roomIndex!!.toInt()]
               changeVideo(videoUrl!!, id)
               respond { content = "Congratulations, you've updated room $id" }
             } else {
