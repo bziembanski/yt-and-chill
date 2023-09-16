@@ -18,8 +18,8 @@ const val w2gUrlCreateUrl = "create.json"
 const val w2gRoomUrl = "https://w2g.tv/rooms/"
 const val w2gRoomUpdateVideoEndpoint = "sync_update"
 
-var w2gApiKey: String = System.getenv("w2gapikey")
-val botToken: String = System.getenv("bottoken")
+var w2gApiKey: String = System.getenv("w2g-api-key")
+val botToken: String = System.getenv("bot-token")
 
 val rooms = mutableListOf<String>()
 
